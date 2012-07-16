@@ -1,6 +1,6 @@
 {   "name": "node-forwardable"
   , "description": "ruby's forwardable inspired modele which defines delegatable functionality of methods for a class"
-  , "version": "0.0.2"
+  , "version": "0.0.3"
   , "author": "Tajima Junpei <p.baleine@gmail.com>"
   , "repository": { "type": "git", "url": "git@github.com:p-baleine/node-forwardable.git" }
   , "homepage": "https://github.com/p-baleine/node-forwardable.git"
