@@ -1,8 +1,14 @@
-{
-    "name": "anything-watch"
+{   "name": "node-forwardable"
+  , "description": "ruby's forwardable inspired modele which defines delegatable functionality of methods for a class"
   , "version": "0.0.1"
+  , "author": "Tajima Junpei <p.baleine@gmail.com>"
+  , "repository": { "type": "git", "url": "git@github.com:p-baleine/node-forwardable.git" }
+  , "homepage": "https://github.com/p-baleine/node-forwardable.git"
   , "devDependencies": {
-    "mocha": "*"
-  , "should": "*"
+      "mocha": "*"
+    , "should": "*"
   }
+  , "keywords": ["forwardable"]
+  , "main": "./lib/forwardable.js"
+  , "engines": { "node": ">= 0.8.1" }
 }
