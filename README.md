@@ -1,7 +1,7 @@
 node-forwardable
 ================
 
-Ruby's forwardable inspired modele which defines delegatable functionality of methods for a class.
+Ruby's forwardable inspired module which defines delegatable functionality of methods for a class.
 
 ## Install
     npm install node-forwardable
