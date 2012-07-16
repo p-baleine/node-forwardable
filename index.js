@@ -1,1 +1,1 @@
-module.exports = require('./lib/node-forwardable');
+module.exports = require('./lib/forwardable');
