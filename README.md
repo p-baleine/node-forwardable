@@ -3,6 +3,9 @@ node-forwardable
 
 Ruby's forwardable inspired modele which defines delegatable functionality of methods for a class.
 
+## Install
+    npm install node-forwardable
+
 ## Example
 
     var util = require('util')
