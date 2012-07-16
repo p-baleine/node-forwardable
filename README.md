@@ -21,5 +21,5 @@ Ruby's forwardable inspired modele which defines delegatable functionality of me
     s.push(3);
     log(s.pop()); // => 3
     log(s.pop()); // => 2
-    log(s.pop()); // => 1    var util = require('util')
+    log(s.pop()); // => 1
     
