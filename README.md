@@ -1,9 +1,9 @@
 node-forwardable
 ================
 
-node-forwardable is a module which defines delegatable functionality of methods for a class.
+Ruby's forwardable inspired modele which defines delegatable functionality of methods for a class.
 
-usage:
+## Example
 
     var util = require('util')
       , forwardable = require('forwardable');
