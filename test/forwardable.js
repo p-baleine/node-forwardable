@@ -8,9 +8,9 @@ describe(forwardable, function() {
   before(function(done) {
     Stack = function() {
       this.content = [];
-      this.defDelegator('content', 'push', 'pop');
     };
-    util._extend(Stack.prototype, forwardable);
+    util._extend(Stack, forwardable);
+    Stack.defDelegator('content', 'push', 'pop');
     s = new Stack;
     done();
   });
