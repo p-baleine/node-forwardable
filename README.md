@@ -10,7 +10,7 @@ Ruby's forwardable inspired module which defines delegatable functionality of me
 
     var util = require('util')
       , log = console.log.bind(console)
-      , forwardable = require('node-forwardable');
+      , forwardable = require('forwardable');
 
     var Stack = function() {
       this.content = [];
