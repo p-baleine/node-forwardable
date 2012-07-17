@@ -4,7 +4,7 @@ node-forwardable
 Ruby's forwardable inspired module which defines delegatable functionality of methods for a class.
 
 ## Install
-    npm install node-forwardable
+    npm install forwardable
 
 ## Example
 
