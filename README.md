@@ -14,9 +14,9 @@ Ruby's forwardable inspired module which defines delegatable functionality of me
 
     var Stack = function() {
       this.content = [];
-      this.defDelegator('content', 'push', 'pop');
     };
-    util._extend(Stack.prototype, forwardable);
+    util._extend(Stack, forwardable);
+    Stack.defDelegator('content', 'push', 'pop');
     
     s = new Stack;
     s.push(1);
