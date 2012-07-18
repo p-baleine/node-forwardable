@@ -1,32 +1,37 @@
 var should = require('should')
   , util = require('util')
-  , forwardable = require('../');
+  , forwardable = require('../').forwardable;
 
-describe(forwardable, function() {
-  var Stack, s;
+describe("forwardable", function() {
+  var Queue, q;
 
   before(function(done) {
-    Stack = function() {
-      this.content = [];
+    Queue = function() {
+      this.q = [];
     };
-    util._extend(Stack, forwardable);
-    Stack.defDelegator('content', 'push', 'pop');
-    s = new Stack;
+    util._extend(Queue, forwardable);
+
+    // setup preferred interface, enq() and deq()...
+    Queue.defDelegator('q', 'push', 'enq');
+    Queue.defDelegator('q', 'shift', 'deq');
+    // support some general Array methods that fit Queues well
+    Queue.defDelegators('q', 'push', 'shift');
+
+    q = new Queue;
     done();
   });
 
-  it('should respond to `push` method', function() {
-    s.push(1);
-    s.content.should.include(1);
-    s.push(2);
-    s.content.should.include(2);
-    s.push(3);
-    s.content.should.include(3);
+  it('should respond with alias method', function() {
+    q.enq(1, 2, 3, 4, 5);
+    q.deq().should.equal(1);
+    q.deq().should.equal(2);
+    q.deq().should.equal(3);
+    q.deq().should.equal(4);
+    q.deq().should.equal(5);
   });
 
-  it('should respond to `pop` method', function() {
-    s.pop().should.equal(3);
-    s.pop().should.equal(2);
-    s.pop().should.equal(1);
+  it('should respond with methods', function() {
+    q.push(6);
+    q.shift().should.equal(6);
   });
 });
