@@ -9,20 +9,27 @@ Ruby's forwardable inspired module which defines delegatable functionality of me
 ## Example
 
     var util = require('util')
-      , log = console.log.bind(console)
-      , forwardable = require('forwardable');
-
-    var Stack = function() {
-      this.content = [];
+      , forwardable = require('../').forwardable
+      , log = console.log.bind(console);
+    
+    var Queue = function() {
+      this.q = []; // prepare delegate object
     };
-    util._extend(Stack, forwardable);
-    Stack.defDelegator('content', 'push', 'pop');
     
-    s = new Stack;
-    s.push(1);
-    s.push(2);
-    s.push(3);
-    log(s.pop()); // => 3
-    log(s.pop()); // => 2
-    log(s.pop()); // => 1
+    util._extend(Queue, forwardable);
     
+    // setup preferred interface, enq() and deq()...
+    Queue.defDelegator('q', 'push', 'enq');
+    Queue.defDelegator('q', 'shift', 'deq');
+    
+    // support some general Array methods that fit Queues well
+    Queue.defDelegators('q', 'push', 'shift');
+    
+    var q = new Queue;
+    q.enq(1, 2, 3, 4, 5);
+    q.push(6);
+    
+    log(q.shift()); //=> 1
+    while (q.q.length > 0) {
+      log(q.deq());  //=> 2, 3, 4, 5, 6
+    }
