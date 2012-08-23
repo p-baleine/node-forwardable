@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/p-baleine/node-forwardable.png)](http://travis-ci.org/p-baleine/node-forwardable)
 node-forwardable
 ================
 
